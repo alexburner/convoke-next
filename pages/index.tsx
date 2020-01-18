@@ -5,7 +5,7 @@ interface Props {
   userAgent?: string;
 }
 
-export default class Page extends React.Component<Props> {
+export default class IndexPage extends React.Component<Props> {
   static async getInitialProps({ req }: NextPageContext) {
     const userAgent = req ? req.headers["user-agent"] : navigator.userAgent;
     return { userAgent };
@@ -13,6 +13,10 @@ export default class Page extends React.Component<Props> {
 
   render() {
     const { userAgent } = this.props;
-    return <h1>Your user agent: {userAgent}</h1>;
+    return (
+      <div>
+        <h1>Your user agent: {userAgent}</h1>
+      </div>
+    );
   }
 }
