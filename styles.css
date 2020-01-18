@@ -1,4 +1,18 @@
-body {
-  background-color: #333;
+html {
+  background-color: #070707;
   color: #eee;
+}
+
+body {
+  background-color: #292727;
+
+  /* (font) - start hidden */
+  font-family: "Montserrat", sans-serif;
+  transition: opacity 1.4s;
+  opacity: 0;
+}
+
+/* (font) - show when loaded */
+.wf-active body {
+  opacity: 0.95;
 }

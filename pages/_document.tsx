@@ -12,7 +12,14 @@ export default class extends Document {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
-          {/* Global Site Tag (gtag.js) - Google Analytics */}
+          {/* Google Web Fonts */}
+          <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `WebFont.load({ google: { families: ["Montserrat"] } });`
+            }}
+          />
+          {/* Google Analytics */}
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
