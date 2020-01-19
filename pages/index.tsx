@@ -16,6 +16,16 @@ export default class IndexPage extends React.Component<Props> {
     return (
       <div>
         <h1>Your user agent: {userAgent}</h1>
+        <section className="skills section">
+          <div className="column is-4">
+            <p className="title is-3">
+              <span className="fa-stack fa-2x">
+                <i className="fas fa-circle fa-stack-2x"></i>
+                <i className="fas fa-crosshairs fa-stack-1x"></i>
+              </span>
+            </p>
+          </div>
+        </section>
       </div>
     );
   }

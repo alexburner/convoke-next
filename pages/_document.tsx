@@ -8,10 +8,76 @@ export default class extends Document {
     return (
       <html>
         <Head>
+          {/* Mobile size & bar colors */}
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=0.9"
+          />
+          <meta name="theme-color" content="#111" />
+          <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="black-translucent"
+          />
+
+          {/* Favicon */}
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+          />
+          <link rel="manifest" href="/site.webmanifest" />
+
+          {/* Basic description */}
+          <meta
+            name="description"
+            content="Convoke is a full service integrated marketing agency helping brands win in gaming, esports, and tech."
+          />
+
+          {/* Open Graph / Facebook */}
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://convoke.gg/" />
+          <meta
+            property="og:title"
+            content="Convoke | Seattle's Gaming & Esports Marketing Agency"
+          />
+          <meta
+            property="og:description"
+            content="Convoke is a full service integrated marketing agency helping brands win in gaming, esports, and tech."
+          />
+          <meta property="og:image" content="https://i.imgur.com/5GRfmUJ.png" />
+
+          {/* Twitter */}
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:url" content="https://convoke.gg/" />
+          <meta
+            property="twitter:title"
+            content="Convoke | Seattle's Gaming & Esports Marketing Agency"
+          />
+          <meta
+            property="twitter:description"
+            content="Convoke is a full service integrated marketing agency helping brands win in gaming, esports, and tech."
+          />
+          <meta
+            name="twitter:image"
+            content="https://i.imgur.com/5GRfmUJ.png"
+          />
+
           {/* Google Web Fonts */}
           <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
           <script
@@ -19,6 +85,7 @@ export default class extends Document {
               __html: `WebFont.load({ google: { families: ["Montserrat"] } });`
             }}
           />
+
           {/* Google Analytics */}
           <script
             async
@@ -34,6 +101,47 @@ export default class extends Document {
             `
             }}
           />
+
+          {/* Bulma */}
+          <link
+            rel="stylesheet"
+            type="text/css"
+            media="screen"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"
+          />
+          <link
+            rel="stylesheet"
+            type="application/octet-stream"
+            media="screen"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.css.map"
+          />
+
+          {/* Font Awesome */}
+          <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css"
+            integrity="sha384-QokYePQSOwpBDuhlHOsX0ymF6R/vLk/UQVz3WHa6wygxI5oGTmDTv8wahFOSspdm"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.8.1/css/regular.css"
+            integrity="sha384-FKw7x8fCxuvzBwOJmhTJJsKzBl8dnN9e2R4+pXRfYoHivikuHkzWyhKWDSMcGNK8"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.8.1/css/fontawesome.css"
+            integrity="sha384-vd1e11sR28tEK9YANUtpIOdjGW14pS87bUBuOIoBILVWLFnS+MCX9T6MMf0VdPGq"
+            crossOrigin="anonymous"
+          />
+
+          {/* Flickity */}
+          <link
+            rel="stylesheet"
+            href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+          />
+          <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
         </Head>
         <body>
           <Main />
