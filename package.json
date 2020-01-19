@@ -1,5 +1,5 @@
 {
-  "name": "ghost-convoke",
+  "name": "convoke-next",
   "version": "1.0.0",
   "description": "Convoke website using Ghost & Next.js",
   "scripts": {
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexburner/ghost-convoke.git"
+    "url": "git+https://github.com/alexburner/convoke-next.git"
   },
   "author": "aburner",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alexburner/ghost-convoke/issues"
+    "url": "https://github.com/alexburner/convoke-next/issues"
   },
-  "homepage": "https://github.com/alexburner/ghost-convoke#readme",
+  "homepage": "https://github.com/alexburner/convoke-next#readme",
   "dependencies": {
     "flickity": "2.2.1",
     "next": "9.2.0",
