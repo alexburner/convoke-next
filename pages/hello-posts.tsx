@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import { PostOrPage } from "@tryghost/content-api";
 
-import { getPosts, getSettings } from "../api/ghost";
+import { getPosts, getSettings } from "../util/ghost";
 
 interface Props {
   posts: PostOrPage[];
