@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import App from "next/app";
 import Head from "next/head";
 import Router from "next/router";
+import Link from "next/link";
 
 import "../styles.css";
 
@@ -27,19 +28,19 @@ export default class CustomApp extends App {
 
 const Navbar: React.SFC = () => {
   const [isActive, setActive] = useState(false);
-  console.log("isActive", isActive);
-  console.log("setActive", setActive);
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <a className="navbar-item" href="https://bulma.io">
-          <img
-            src="https://bulma.io/images/bulma-logo.png"
-            alt="Bulma: a modern CSS framework based on Flexbox"
-            width="112"
-            height="28"
-          />
-        </a>
+        <Link href="/">
+          <a className="navbar-item">
+            <img
+              src="https://bulma.io/images/bulma-logo.png"
+              alt="Bulma: a modern CSS framework based on Flexbox"
+              width="112"
+              height="28"
+            />
+          </a>
+        </Link>
         <a
           role="button"
           className={"navbar-burger" + (isActive ? " is-active" : "")}
@@ -58,18 +59,26 @@ const Navbar: React.SFC = () => {
         className={"navbar-menu" + (isActive ? " is-active" : "")}
       >
         <div className="navbar-end">
-          <a className="navbar-item" href="/">
-            Home
-          </a>
-          <a className="navbar-item" href="/about">
-            About
-          </a>
-          <a className="navbar-item" href="/work">
-            Work
-          </a>
-          <a className="navbar-item" href="/content">
-            Content
-          </a>
+          <Link href="/">
+            <a className="navbar-item" href="/">
+              Home
+            </a>
+          </Link>
+          <Link href="/about">
+            <a className="navbar-item" href="/about">
+              About
+            </a>
+          </Link>
+          <Link href="/work">
+            <a className="navbar-item" href="/work">
+              Work
+            </a>
+          </Link>
+          <Link href="/content">
+            <a className="navbar-item" href="/content">
+              Content
+            </a>
+          </Link>
           <a className="navbar-item" href="/TODO-scroll-polyfill">
             Contact
           </a>
