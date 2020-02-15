@@ -61,16 +61,16 @@ const Navbar: React.SFC = () => {
           <a className="navbar-item" href="/">
             Home
           </a>
-          <a className="navbar-item" href="/">
+          <a className="navbar-item" href="/about">
             About
           </a>
-          <a className="navbar-item" href="/">
+          <a className="navbar-item" href="/work">
             Work
           </a>
-          <a className="navbar-item" href="/">
+          <a className="navbar-item" href="/content">
             Content
           </a>
-          <a className="navbar-item" href="/">
+          <a className="navbar-item" href="/TODO-scroll-polyfill">
             Contact
           </a>
         </div>
