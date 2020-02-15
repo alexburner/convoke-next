@@ -79,7 +79,7 @@ const Navbar: React.SFC = () => {
               Content
             </a>
           </Link>
-          <a className="navbar-item" href="/TODO-scroll-polyfill">
+          <a className="navbar-item" onClick={scrollToFooter}>
             Contact
           </a>
         </div>
@@ -90,7 +90,7 @@ const Navbar: React.SFC = () => {
 
 const Footer: React.SFC = () => (
   <footer>
-    <div className="container">
+    <div className="container" id="footer">
       <div className="columns is-centered">
         <div className="column is-8">
           <div className="title is-3">Send an email</div>
@@ -143,3 +143,7 @@ const Footer: React.SFC = () => (
     </div>
   </footer>
 );
+
+const scrollToFooter = () => {
+  document.querySelector("#footer")?.scrollIntoView({ behavior: "smooth" });
+};

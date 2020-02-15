@@ -141,6 +141,13 @@ export default class extends Document {
             rel="stylesheet"
             href="https://unpkg.com/flickity@2/dist/flickity.min.css"
           />
+
+          {/* Smooth Scroll polyfill */}
+          <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/iamdustan-smoothscroll/0.4.0/smoothscroll.min.js"
+            integrity="sha256-IylDNWjip7FK2TJUYck237qBTBeSiwnSFDCjLG686D4="
+            crossOrigin="anonymous"
+          ></script>
         </Head>
         <body>
           <Main />
