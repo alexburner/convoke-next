@@ -4,7 +4,7 @@ import { RichText } from "prismic-reactjs";
 import { getPage, Page } from "../util/prismic";
 
 const Content: NextPage<{ page: Page }> = ({ page }) => (
-  <RichText render={page.body} />
+  <RichText render={page.body || []} />
 );
 
 Content.getInitialProps = async () => {

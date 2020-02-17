@@ -3,10 +3,9 @@ import { RichText } from "prismic-reactjs";
 
 import { getPage, Page } from "../util/prismic";
 
-const Work: NextPage<{ page: Page }> = ({ page }) => {
-  const html = RichText.render(page.body);
-  return <>{html}</>;
-};
+const Work: NextPage<{ page: Page }> = ({ page }) => (
+  <RichText render={page.body || []} />
+);
 
 Work.getInitialProps = async () => {
   const page = await getPage("work");
