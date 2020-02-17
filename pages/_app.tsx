@@ -3,12 +3,19 @@ import App from "next/app";
 import Head from "next/head";
 import Router from "next/router";
 import Link from "next/link";
+import NProgress from "nprogress";
 
-import "../styles.css";
+import "../style/main.css";
+import "../style/nprogress.css";
 
 import { pageview } from "../util/gtag";
 
-Router.events.on("routeChangeComplete", url => pageview(url));
+Router.events.on("routeChangeStart", () => NProgress.start());
+Router.events.on("routeChangeError", () => NProgress.done());
+Router.events.on("routeChangeComplete", url => {
+  NProgress.done();
+  pageview(url);
+});
 
 export default class CustomApp extends App {
   public render() {
