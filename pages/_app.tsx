@@ -89,7 +89,7 @@ const Navbar: React.SFC = () => {
 };
 
 const Footer: React.SFC = () => (
-  <footer>
+  <footer className="contact">
     <div className="container" id="footer">
       <div className="columns is-centered">
         <div className="column is-8">
