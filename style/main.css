@@ -1,21 +1,23 @@
 html {
-  background-color: #070707;
+  background-color: #292727;
   color: #eee;
 }
 
-body {
-  background-color: #292727;
+/* Font */
 
-  /* (font) - start hidden */
+body {
   font-family: "Montserrat", sans-serif;
-  transition: opacity 1.4s;
+  /* start hidden */
   opacity: 0;
+  transition: opacity 1.4s;
 }
 
-/* (font) - show when loaded */
 .wf-active body {
+  /* show when fonts loaded */
   opacity: 0.95;
 }
+
+/* Structural */
 
 .title {
   color: #eee;
@@ -38,14 +40,33 @@ body {
   padding: 2% 4% 3%;
 }
 
-/* Brand */
+/* Navbar */
+.navbar,
+.navbar-menu {
+  background-color: #070707;
+}
 
-.brand {
+.navbar-burger,
+.navbar-item {
+  color: #eee;
+  user-select: none;
+}
+
+.navbar-burger:hover,
+a.navbar-item.is-active,
+a.navbar-item:hover {
+  color: #eee;
+  background-color: #101010;
+}
+
+/* Blade - Positioning */
+
+.positioning {
   background-color: #000;
   position: relative;
 }
 
-.brand .background {
+.positioning .background {
   opacity: 0.5;
 
   position: absolute;
@@ -60,35 +81,17 @@ body {
   filter: grayscale(100%);
 }
 
-.brand .logo {
-  width: 50%;
-}
+/* Blade - Formula */
 
-@media screen and (max-width: 768px) {
-  .brand {
-    /* force is-medium on touch */
-    padding-bottom: 9rem;
-    padding-top: 9rem;
-  }
-
-  .brand .logo {
-    width: 100%;
-  }
-}
-
-/* About */
-
-.about {
+.formula {
   background: #080808;
-  padding-top: 0;
-  padding-bottom: 3em;
 }
 
-.about p {
+.formula p {
   color: #aaa;
 }
 
-/* Core Competencies */
+/* Blade - Core Competencies */
 
 .skills {
   background-color: transparent;
@@ -110,7 +113,7 @@ body {
   color: #c52b1c;
 }
 
-/* Recent Work */
+/* Blade - Featured Work */
 
 .work {
   background-color: #e6e6e6;
@@ -159,7 +162,7 @@ body {
   }
 }
 
-/* Recent content */
+/* Blade - Recent Content */
 
 .content {
   background-color: #fff;
@@ -182,11 +185,7 @@ body {
   padding: 0 0.1em;
 }
 
-/* Contact */
-
-.contact {
-  background-color: transparent;
-}
+/* Footer - Contact */
 
 .contact .input,
 .contact .textarea {

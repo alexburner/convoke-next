@@ -1,7 +1,7 @@
 import React from "react";
 
-export const About: React.SFC = () => (
-  <section className="about section">
+export const Formula: React.SFC = () => (
+  <section className="formula section">
     <div className="container has-text-centered">
       <div className="title is-1 is-spaced">Gamers. Geeks. Creatives.</div>
       <div className="subtitle is-4">
