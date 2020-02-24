@@ -1,14 +1,18 @@
 import { NextPage } from "next";
 import { RichText } from "prismic-reactjs";
 
-import { getPage, Page } from "../util/prismic";
+import { getSubpage, Subpage } from "../util/prismic";
 
-const Content: NextPage<{ page: Page }> = ({ page }) => (
-  <RichText render={page.body || []} />
+const Content: NextPage<{ page: Subpage }> = ({ page }) => (
+  <section className="section subpage">
+    <div className="container content">
+      <RichText render={page.body || []} />
+    </div>
+  </section>
 );
 
 Content.getInitialProps = async () => {
-  const page = await getPage("content");
+  const page = await getSubpage("content");
   if (!page) throw new Error("Couldn't find content page");
   return { page };
 };

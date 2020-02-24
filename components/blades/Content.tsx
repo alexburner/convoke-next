@@ -1,57 +1,90 @@
 import React from "react";
+import { RichText } from "prismic-reactjs";
+import { useQuery } from "@apollo/react-hooks";
+import gql from "graphql-tag";
 
-export const Content: React.SFC = () => (
-  <section className="content section">
-    <div className="container">
-      <div className="title is-3">Featured Articles</div>
-      <div className="columns is-mobile is-multiline">
-        <div className="column is-half-mobile">
-          <a
-            target="_blank"
-            href="https://open.spotify.com/episode/2ggLSpSan9ZGs27ALt4yNH?si=qNhiOc7SS0y6Ku9k0XTjQw"
-            title="Spotify - The Summoning Hour ft. Gary Gonzalez of Convoke"
-          >
-            <img
-              src="https://i.imgur.com/GWMytLhl.jpg"
-              alt="The Summoning Hour"
-            />
-            <p>Podcast: The Summoning Hour ft. Gary Gonzalez of Convoke</p>
-          </a>
+import { ContentItemData, ContentItem } from "../ContentItem";
+
+interface Blade {
+  title: unknown;
+  content_set: { content: ContentItemData }[];
+}
+
+const GET_BLADE = gql`
+  query {
+    allBladeContents {
+      edges {
+        node {
+          title
+          content_set {
+            content {
+              ... on Content {
+                title
+                image_url
+                link_url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+const extractBlade = (data: any): Blade | undefined =>
+  data?.allBladeContents?.edges?.[0]?.node;
+
+export const Content: React.SFC = () => {
+  const { loading, error, data } = useQuery(GET_BLADE);
+
+  if (loading) {
+    return (
+      <section className="content-x section">
+        <div className="container has-text-centered">
+          <div className="fa-3x">
+            <i className="fas fa-circle-notch fa-spin"></i>
+          </div>
         </div>
-        <div className="column is-half-mobile">
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/pulse/kratos-coco-power-research-trips-gary-gonzalez/"
-            title="Of Kratos and Coco: The Power of Research Trips"
-          >
-            <img src="https://i.imgur.com/ZmQMkpgl.jpg" alt="Case Study" />
-            <p>Of Kratos and Coco: The Power of Research Trips</p>
-          </a>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="content-x section">
+        <div className="container has-text-centered">
+          <h4>Error!</h4>
+          <pre>{error.message}</pre>
         </div>
-        <div className="column is-half-mobile">
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/pulse/mentorship-recommended-reading-gary-gonzalez/"
-            title="Mentorship & Recommended Reading"
-          >
-            <img
-              src="https://i.imgur.com/aitnQ29l.jpg"
-              alt="Recommended Reading"
-            />
-            <p>Mentorship & Recommended Reading</p>
-          </a>
+      </section>
+    );
+  }
+
+  const blade = extractBlade(data);
+
+  if (!blade) {
+    return (
+      <section className="content-x section">
+        <div className="container has-text-centered">
+          <h4>Error! Malformed data</h4>
+          <pre>{JSON.stringify(data, null, 2)}</pre>
         </div>
-        <div className="column is-half-mobile">
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/pulse/bizarre-successful-launch-apex-legends-has-deep-future-gary-gonzalez/"
-            title="What Apex Legends Tells Us About The Future of Marketing"
-          >
-            <img src="https://i.imgur.com/AK2qtudl.jpg" alt="Case Study" />
-            <p>What Apex Legends Tells Us About The Future of Marketing</p>
-          </a>
+      </section>
+    );
+  }
+
+  return (
+    <section className="content-x section">
+      <div className="container">
+        <div className="title is-3">{RichText.asText(blade.title)}</div>
+        <div className="columns is-mobile is-multiline">
+          {blade.content_set.map(({ content }) => (
+            <div className="column is-half-mobile">
+              <ContentItem key={content.link_url} data={content} />
+            </div>
+          ))}
         </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};

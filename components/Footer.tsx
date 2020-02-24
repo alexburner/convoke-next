@@ -1,11 +1,11 @@
 import React from "react";
 
 export const Footer: React.SFC = () => (
-  <footer className="contact">
-    <div className="container" id="footer">
+  <footer id="footer" className="section footer">
+    <div className="container">
       <div className="columns is-centered">
-        <div className="column is-8">
-          <div className="title is-3">Send an email</div>
+        <div className="contact column is-8">
+          <div className="title is-3">Contact us</div>
           <form action="https://formspree.io/gary@convoke.gg" method="POST">
             <div className="field is-grouped">
               <div className="control is-expanded has-icons-left">
@@ -52,6 +52,11 @@ export const Footer: React.SFC = () => (
           </form>
         </div>
       </div>
+    </div>
+    <div className="convoke">
+      <strong>Convoke</strong> /kənˈvoʊk/ <em>v.</em> Your creatures can help
+      cast this spell. Each creature you tap while casting this spell pays for ①
+      or one mana of that creature's color.
     </div>
   </footer>
 );

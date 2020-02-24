@@ -3,9 +3,9 @@ import { InMemoryCache } from "apollo-cache-inmemory";
 import ApolloClient from "apollo-client";
 import gql from "graphql-tag";
 
-export interface Page {
-  title: any;
-  body: any;
+export interface Subpage {
+  title: unknown;
+  body: unknown;
 }
 
 export const client = new ApolloClient({
@@ -13,26 +13,22 @@ export const client = new ApolloClient({
   cache: new InMemoryCache()
 });
 
-export const getPage = async (uid: string): Promise<Page | undefined> => {
+export const getSubpage = async (uid: string): Promise<Subpage | undefined> => {
   const response = await client.query({
     query: gql`
       query {
-        allPages(uid: "${uid}") {
-          edges {
-            node {
-              title
-              body
-            }
-          }
+        subpage(uid:"${uid}", lang:"en-us"){
+          title
+          body
         }
       }
     `
   });
-  const page = response?.data?.allPages?.edges?.[0]?.node;
-  if (page) {
+  const subpage = response?.data?.subpage;
+  if (subpage) {
     return {
-      title: page.title,
-      body: page.body
+      title: subpage.title,
+      body: subpage.body
     };
   }
 };

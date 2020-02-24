@@ -3,6 +3,7 @@ import App from "next/app";
 import Head from "next/head";
 import Router from "next/router";
 import NProgress from "nprogress";
+import { ApolloProvider } from "@apollo/react-hooks";
 
 import "../style/main.css";
 import "../style/nprogress.css";
@@ -10,6 +11,7 @@ import "../style/nprogress.css";
 import { pageview } from "../util/gtag";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
+import { client } from "../util/prismic";
 
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeError", () => NProgress.done());
@@ -27,7 +29,9 @@ export default class CustomApp extends App {
           <title>Convoke | Seattle's Gaming & Esports Marketing Agency</title>
         </Head>
         <Navbar />
-        <Component {...pageProps} />
+        <ApolloProvider client={client}>
+          <Component {...pageProps} />
+        </ApolloProvider>
         <Footer />
       </>
     );

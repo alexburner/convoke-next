@@ -1,54 +1,104 @@
 import React from "react";
+import gql from "graphql-tag";
+import { useQuery } from "@apollo/react-hooks";
+import { RichText } from "prismic-reactjs";
 
-export const Skills: React.SFC = () => (
-  <section className="skills section">
-    <div className="container has-text-centered">
-      <div className="title is-2">Core Competencies</div>
-      <div className="columns is-multiline is-centered">
-        <Skill
-          title="Strategy"
-          text="Research, audience insights, go-to-market strategy, brand strategy"
-          icon="chess-bishop"
-        />
-        <Skill
-          title="Creative"
-          text="Branding, content development, video production, graphic and visual design"
-          icon="ghost"
-        />
-        <Skill
-          title="Digital Marketing"
-          text="Paid media, social media, search, display, ecomm and analytics"
-          icon="crosshairs"
-        />
+interface Blade {
+  title: unknown;
+  skill_set: {
+    title: unknown;
+    description: unknown;
+    font_awesome_icon: string | null;
+  }[];
+}
 
-        <Skill
-          title="Community Management"
-          text="Influencer marketing, customer care, editorial development and deployment"
-          icon="gamepad"
-        />
-        <Skill
-          title="Web Development"
-          text="Websites, app development, CMS, custom integrations, email"
-          icon="laptop-code"
-        />
+const GET_BLADE = gql`
+  query {
+    allBladeSkillss {
+      edges {
+        node {
+          title
+          skill_set {
+            title
+            description
+            font_awesome_icon
+          }
+        }
+      }
+    }
+  }
+`;
+
+const extractBlade = (data: any): Blade | undefined =>
+  data?.allBladeSkillss?.edges?.[0]?.node;
+
+export const Skills: React.SFC = () => {
+  const { loading, error, data } = useQuery(GET_BLADE);
+
+  if (loading) {
+    return (
+      <section className="skills section">
+        <div className="container has-text-centered">
+          <div className="fa-3x">
+            <i className="fas fa-circle-notch fa-spin"></i>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="skills section">
+        <div className="container has-text-centered">
+          <h4>Error!</h4>
+          <pre>{error.message}</pre>
+        </div>
+      </section>
+    );
+  }
+
+  const blade = extractBlade(data);
+
+  if (!blade) {
+    return (
+      <section className="skills section">
+        <div className="container has-text-centered">
+          <h4>Error! Malformed data</h4>
+          <pre>{JSON.stringify(data, null, 2)}</pre>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section className="skills section">
+      <div className="container">
+        <div className="title is-2">{RichText.asText(blade.title)}</div>
+        <div className="columns">
+          {blade.skill_set.map(skill => (
+            <div
+              key={skill.font_awesome_icon || ""}
+              className="column has-text-centered"
+            >
+              <p className="title is-3">
+                <span className="fa-stack fa-2x">
+                  <i className="fas fa-circle fa-stack-2x"></i>
+                  <i
+                    className={`fas fa-${skill.font_awesome_icon} fa-stack-1x`}
+                  ></i>
+                </span>
+              </p>
+              <div className="title is-4 is-spaced">
+                {RichText.asText(skill.title)}
+              </div>
+              <div className="subtitle is-6">
+                <RichText render={skill.description || []} />
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-);
-
-const Skill: React.SFC<{
-  title: string;
-  text: string;
-  icon: string;
-}> = ({ title, text, icon }) => (
-  <div className="column is-4">
-    <p className="title is-3">
-      <span className="fa-stack fa-2x">
-        <i className="fas fa-circle fa-stack-2x"></i>
-        <i className={`fas fa-${icon} fa-stack-1x`}></i>
-      </span>
-    </p>
-    <div className="title is-4">{title}</div>
-    <div className="subtitle is-6">{text}</div>
-  </div>
-);
+    </section>
+  );
+};
