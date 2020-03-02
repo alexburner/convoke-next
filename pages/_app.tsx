@@ -9,7 +9,7 @@ import "../style/main.css";
 import "../style/nprogress.css";
 
 import { pageview } from "../util/gtag";
-import { Navbar } from "../components/Navbar";
+// import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { client } from "../util/prismic";
 
@@ -28,7 +28,7 @@ export default class CustomApp extends App {
         <Head>
           <title>Convoke | Seattle's Gaming & Esports Marketing Agency</title>
         </Head>
-        <Navbar />
+        {/* <Navbar /> */}
         <ApolloProvider client={client}>
           <Component {...pageProps} />
         </ApolloProvider>
