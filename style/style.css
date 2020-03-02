@@ -64,12 +64,55 @@ a.navbar-item:hover {
   background-color: #101010;
 }
 
+/* Brand */
+
+.brand {
+  background-color: #000;
+  position: relative;
+}
+
+.brand .background {
+  opacity: 0.5;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: url(https://i.imgur.com/bfSLoYI.jpg) no-repeat center bottom;
+  background-size: cover;
+
+  filter: grayscale(100%);
+}
+
+.brand .logo {
+  width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .brand {
+    /* force is-medium on touch */
+    padding-bottom: 9rem;
+    padding-top: 9rem;
+  }
+
+  .brand .logo {
+    width: 100%;
+  }
+}
+
 /* Blade - Positioning */
 
 .positioning {
+  position: relative;
   background: none;
   background-color: #080808;
-  position: relative;
+  padding-top: 0;
+}
+
+.positioning p {
+  color: #aaa;
 }
 
 /* Blade - Formula */

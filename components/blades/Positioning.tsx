@@ -5,7 +5,8 @@ import { RichText } from "prismic-reactjs";
 
 interface Blade {
   title: unknown;
-  body: unknown;
+  subtitle: string | null;
+  caption: string | null;
   background_image_url: string | null;
 }
 
@@ -15,7 +16,8 @@ const GET_BLADE = gql`
       edges {
         node {
           title
-          body
+          subtitle
+          caption
           background_image_url
         }
       }
@@ -80,11 +82,16 @@ export const Positioning: React.SFC = () => {
           }}
         ></div>
       )} */}
-      <div className="container has-text-right">
-        <div className="title is-2">{RichText.asText(blade.title)}</div>
+      <div className="container">
         <div className="columns">
-          <div className="column is-8 is-offset-4">
-            <RichText render={blade.body || []} />
+          <div className="column">
+            <div className="title is-1 is-spaced">
+              {RichText.asText(blade.title)}
+            </div>
+            {blade.subtitle && (
+              <div className="subtitle is-4">{blade.subtitle}</div>
+            )}
+            {blade.caption && <p>{blade.caption}</p>}
           </div>
         </div>
       </div>
