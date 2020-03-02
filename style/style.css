@@ -139,6 +139,16 @@ a.navbar-item:hover {
   color: #bb2b24;
 }
 
+/* Blade - Logo Soup */
+
+.logos {
+  background-color: #e6e6e6;
+}
+
+.logos .title {
+  color: #333;
+}
+
 /* Blade - Featured Work */
 
 .work {
@@ -261,8 +271,8 @@ a.navbar-item:hover {
 
 .footer.section {
   background-color: #070707;
-  padding-top: 1em;
-  padding-bottom: 1.33em;
+  padding-top: 1.5em;
+  padding-bottom: 2em;
 }
 
 .footer .container {
