@@ -149,7 +149,7 @@ export default class extends Document {
             crossOrigin="anonymous"
           ></script>
         </Head>
-        <body className="has-navbar-fixed-top">
+        <body>
           <Main />
           <NextScript />
         </body>
