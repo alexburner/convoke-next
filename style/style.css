@@ -67,14 +67,15 @@ a.navbar-item:hover {
 /* Blade - Positioning */
 
 .positioning {
-  background-color: #000;
+  background: none;
+  background-color: #080808;
   position: relative;
 }
 
 /* Blade - Formula */
 
 .formula {
-  background: #080808;
+  background-color: #171616;
 }
 
 .formula p {
@@ -92,13 +93,13 @@ a.navbar-item:hover {
 }
 
 .skills .fa-circle {
-  color: #c52b1c;
+  color: #bb2b24;
 }
 
 /* Blade - Featured Work */
 
 .work {
-  background-color: #e6e6e6;
+  background-color: #fff;
   position: relative;
   z-index: 10;
 }
@@ -148,7 +149,7 @@ a.navbar-item:hover {
 /* note: Bulma uses ".content" */
 
 .content-x {
-  background-color: #fff;
+  background-color: #e6e6e6;
 }
 
 .content-x .title {

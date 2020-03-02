@@ -74,15 +74,15 @@ export const Skills: React.SFC = () => {
   return (
     <section className="skills section">
       <div className="container">
-        <div className="title is-2">{RichText.asText(blade.title)}</div>
+        <div className="title is-3">{RichText.asText(blade.title)}</div>
         <div className="columns">
           {blade.skill_set.map(skill => (
             <div
               key={skill.font_awesome_icon || ""}
               className="column has-text-centered"
             >
-              <p className="title is-3">
-                <span className="fa-stack fa-2x">
+              <p className="title is-4">
+                <span className="fa-stack fa-3x">
                   <i className="fas fa-circle fa-stack-2x"></i>
                   <i
                     className={`fas fa-${skill.font_awesome_icon} fa-stack-1x`}

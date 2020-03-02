@@ -67,7 +67,7 @@ export const Positioning: React.SFC = () => {
 
   return (
     <section className="positioning section">
-      {blade.background_image_url && (
+      {/* {blade.background_image_url && (
         <div
           style={{
             background: `url(${blade.background_image_url}) no-repeat center bottom`,
@@ -79,7 +79,7 @@ export const Positioning: React.SFC = () => {
             bottom: 0
           }}
         ></div>
-      )}
+      )} */}
       <div className="container has-text-right">
         <div className="title is-2">{RichText.asText(blade.title)}</div>
         <div className="columns">
