@@ -5,7 +5,7 @@ import Router from "next/router";
 import NProgress from "nprogress";
 import { ApolloProvider } from "@apollo/react-hooks";
 
-import "../style/main.css";
+import "../style/style.css";
 import "../style/nprogress.css";
 
 import { pageview } from "../util/gtag";
