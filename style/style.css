@@ -168,25 +168,11 @@ a.navbar-item:hover {
   padding: 0 0.1em;
 }
 
-/* Footer */
+/* Contact */
 
-.footer {
-  position: relative;
+.contact {
   background-color: #292727;
-  padding-bottom: 6em;
 }
-
-.footer .convoke {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1em;
-  text-align: center;
-  background-color: #070707;
-}
-
-/* Footer - Contact */
 
 .contact .input,
 .contact .textarea {
@@ -225,6 +211,19 @@ a.navbar-item:hover {
   background-color: #c52b1c;
   padding-left: 2em;
   padding-right: 2em;
+}
+
+/* Footer */
+
+.footer.section {
+  background-color: #070707;
+  padding-top: 1em;
+  padding-bottom: 1.33em;
+}
+
+.footer .container {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 /* Subpages */

@@ -12,6 +12,7 @@ import { pageview } from "../util/gtag";
 // import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { client } from "../util/prismic";
+import { Contact } from "../components/Contact";
 
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeError", () => NProgress.done());
@@ -32,6 +33,7 @@ export default class CustomApp extends App {
         <ApolloProvider client={client}>
           <Component {...pageProps} />
         </ApolloProvider>
+        <Contact />
         <Footer />
       </>
     );

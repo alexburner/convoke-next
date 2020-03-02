@@ -58,6 +58,5 @@ export const Navbar: React.SFC = () => {
   );
 };
 
-const scrollToFooter = () => {
-  document.querySelector("#footer")?.scrollIntoView({ behavior: "smooth" });
-};
+const scrollToFooter = () =>
+  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
