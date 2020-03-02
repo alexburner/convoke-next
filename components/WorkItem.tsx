@@ -44,7 +44,11 @@ const WorkItemCarousel: React.SFC<Props> = ({ data }) => {
       <div className="column is-full-mobile is-full-tablet is-full-desktop is-three-quarters-widescreen is-three-quarters-fullhd">
         <div ref={carouselRef} className="carousel-media">
           {data.media.map(item =>
-            item.url ? <CarouselMediaCell src={item.url} /> : <></>
+            item.url ? (
+              <CarouselMediaCell key={item.url} src={item.url} />
+            ) : (
+              <></>
+            )
           )}
         </div>
       </div>

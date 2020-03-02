@@ -79,8 +79,8 @@ export const Content: React.SFC = () => {
         <div className="title is-3">{RichText.asText(blade.title)}</div>
         <div className="columns is-mobile is-multiline">
           {blade.content_set.map(({ content }) => (
-            <div className="column is-half-mobile">
-              <ContentItem key={content.link_url} data={content} />
+            <div key={content.link_url} className="column is-half-mobile">
+              <ContentItem data={content} />
             </div>
           ))}
         </div>
