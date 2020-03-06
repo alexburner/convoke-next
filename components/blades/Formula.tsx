@@ -5,6 +5,7 @@ import { RichText } from "prismic-reactjs";
 
 interface Blade {
   title: unknown;
+  description: unknown;
   stages: {
     image_url: string | null;
     alt_text: string | null;
@@ -17,6 +18,7 @@ const GET_BLADE = gql`
       edges {
         node {
           title
+          description
           stages {
             image_url
             alt_text
@@ -73,6 +75,9 @@ export const Formula: React.SFC = () => {
     <section className="formula section">
       <div className="container">
         <div className="title is-3">{RichText.asText(blade.title)}</div>
+        <div className="content">
+          <RichText render={blade.description || []} />
+        </div>
         <div className="columns">
           {blade.stages.map(stage => (
             <div key={stage.image_url || ""} className="column">
