@@ -5,7 +5,8 @@ import { RichText } from "prismic-reactjs";
 
 interface Blade {
   title: unknown;
-  image_url: string | null;
+  description: unknown;
+  logos: { image_url: string | null }[];
 }
 
 const GET_BLADE = gql`
@@ -14,7 +15,10 @@ const GET_BLADE = gql`
       edges {
         node {
           title
-          image_url
+          description
+          logos {
+            image_url
+          }
         }
       }
     }
@@ -68,12 +72,22 @@ export const Logos: React.SFC = () => {
     <section className="logos section">
       <div className="container">
         <div className="title is-3">{RichText.asText(blade.title)}</div>
-        <div className="columns">
-          <div className="column">
-            <figure className="image">
-              <img src={blade.image_url || ""} />
-            </figure>
+        {blade.description && (
+          <div className="content">
+            <RichText render={blade.description} />
           </div>
+        )}
+        <div className="columns is-mobile is-multiline is-centered">
+          {blade.logos.map(logo => (
+            <div
+              key={logo.image_url || ""}
+              className="column is-4-mobile is-3-tablet is-2-widescreen"
+            >
+              <figure className="image">
+                <img src={logo.image_url || ""} />
+              </figure>
+            </div>
+          ))}
         </div>
       </div>
     </section>
