@@ -54,7 +54,7 @@ export default class extends Document {
           <meta property="og:url" content="https://convoke.gg/" />
           <meta
             property="og:title"
-            content="Convoke | Seattle's Gaming & Esports Marketing Agency"
+            content="Convoke | Marketing Powered By Nerdiness"
           />
           <meta
             property="og:description"
@@ -67,7 +67,7 @@ export default class extends Document {
           <meta property="twitter:url" content="https://convoke.gg/" />
           <meta
             property="twitter:title"
-            content="Convoke | Seattle's Gaming & Esports Marketing Agency"
+            content="Convoke | Marketing Powered By Nerdiness"
           />
           <meta
             property="twitter:description"
