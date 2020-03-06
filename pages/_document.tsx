@@ -46,7 +46,7 @@ export default class extends Document {
           {/* Basic description */}
           <meta
             name="description"
-            content="Convoke is a full service integrated marketing agency helping brands win in gaming, esports, and tech."
+            content="Leveraging a unique approach to strategy, we combine the rigor of a traditional marketing consultancy with deep subject matter expertise in tech and gaming."
           />
 
           {/* Open Graph / Facebook */}
@@ -58,7 +58,7 @@ export default class extends Document {
           />
           <meta
             property="og:description"
-            content="Convoke is a full service integrated marketing agency helping brands win in gaming, esports, and tech."
+            content="Leveraging a unique approach to strategy, we combine the rigor of a traditional marketing consultancy with deep subject matter expertise in tech and gaming."
           />
           <meta property="og:image" content="https://i.imgur.com/5GRfmUJ.png" />
 
@@ -71,7 +71,7 @@ export default class extends Document {
           />
           <meta
             property="twitter:description"
-            content="Convoke is a full service integrated marketing agency helping brands win in gaming, esports, and tech."
+            content="Leveraging a unique approach to strategy, we combine the rigor of a traditional marketing consultancy with deep subject matter expertise in tech and gaming."
           />
           <meta
             name="twitter:image"

@@ -27,7 +27,7 @@ export default class CustomApp extends App {
     return (
       <>
         <Head>
-          <title>Convoke | Seattle's Gaming & Esports Marketing Agency</title>
+          <title>Convoke | Marketing Powered By Nerdiness</title>
         </Head>
         {/* <Navbar /> */}
         <ApolloProvider client={client}>
