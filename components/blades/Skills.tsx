@@ -71,6 +71,8 @@ export const Skills: React.SFC = () => {
     );
   }
 
+  console.log(blade.skill_set[0].description);
+
   return (
     <section className="skills section">
       <div className="container">
@@ -92,9 +94,11 @@ export const Skills: React.SFC = () => {
               <div className="title is-4 is-spaced">
                 {RichText.asText(skill.title)}
               </div>
-              <div className="subtitle is-6">
-                <RichText render={skill.description || []} />
-              </div>
+              {RichText.asText(skill.description) && (
+                <div className="subtitle is-6">
+                  <RichText render={skill.description} />
+                </div>
+              )}
             </div>
           ))}
         </div>

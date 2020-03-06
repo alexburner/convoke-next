@@ -69,11 +69,12 @@ export const Positioning: React.SFC = () => {
 
   return (
     <section className="positioning section">
-      {/* {blade.background_image_url && (
+      {blade.background_image_url && (
         <div
           style={{
             background: `url(${blade.background_image_url}) no-repeat center bottom`,
             backgroundSize: "cover",
+            filter: "grayscale(100%)",
             position: "absolute",
             top: 0,
             left: 0,
@@ -81,19 +82,20 @@ export const Positioning: React.SFC = () => {
             bottom: 0
           }}
         ></div>
-      )} */}
+      )}
       <div className="container">
-        <div className="columns">
-          <div className="column">
-            <div className="title is-1 is-spaced">
-              {RichText.asText(blade.title)}
-            </div>
-            {blade.subtitle && (
-              <div className="subtitle is-4">{blade.subtitle}</div>
-            )}
-            {blade.caption && <p>{blade.caption}</p>}
-          </div>
+        <img
+          className="logo"
+          src="https://i.imgur.com/aXdnZnn.png"
+          alt="convoke"
+        />
+        <div className="title is-1 is-spaced">
+          {RichText.asText(blade.title)}
         </div>
+        {blade.subtitle && (
+          <div className="subtitle is-4">{blade.subtitle}</div>
+        )}
+        {blade.caption && <p>{blade.caption}</p>}
       </div>
     </section>
   );

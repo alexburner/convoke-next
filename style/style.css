@@ -27,15 +27,6 @@ body {
   color: #ccc;
 }
 
-.section,
-.footer {
-  background-image: linear-gradient(
-    100deg,
-    rgba(0, 0, 0, 0.02) 0%,
-    rgba(0, 0, 0, 0.2) 100%
-  );
-}
-
 .container {
   padding: 2% 4% 3%;
 }
@@ -111,6 +102,11 @@ a.navbar-item:hover {
   padding-top: 0;
 }
 
+.positioning .logo {
+  width: 360px;
+  margin: 3em 0 2em;
+}
+
 .positioning p {
   color: #aaa;
 }
@@ -118,7 +114,7 @@ a.navbar-item:hover {
 /* Blade - Formula */
 
 .formula {
-  background-color: #171616;
+  background-color: #111010;
 }
 
 .formula p {
@@ -155,7 +151,19 @@ a.navbar-item:hover {
 /* Blade - Core Competencies */
 
 .skills {
-  background-color: #292727;
+  background-color: #eaeaea;
+}
+
+.skills .title {
+  color: #333;
+}
+
+.skills p {
+  color: #333;
+}
+
+.skills .fa-stack-1x {
+  color: #eaeaea;
 }
 
 .skills .columns {
@@ -169,17 +177,13 @@ a.navbar-item:hover {
 /* Blade - Logo Soup */
 
 .logos {
-  background-color: #e6e6e6;
-}
-
-.logos .title {
-  color: #333;
+  background-color: #bb2b24;
 }
 
 /* Blade - Featured Work */
 
 .work {
-  background-color: #fff;
+  background-color: #eaeaea;
   position: relative;
   z-index: 10;
 }
@@ -229,19 +233,15 @@ a.navbar-item:hover {
 /* note: Bulma uses ".content" */
 
 .content-x {
-  background-color: #e6e6e6;
-}
-
-.content-x .title {
-  color: #333;
+  background-color: #111010;
 }
 
 .content-x a {
-  color: #363636;
+  color: #ccc;
 }
 
 .content-x a:hover {
-  color: #3273dc;
+  color: rgb(69, 129, 220);
   text-decoration: underline;
 }
 
@@ -252,44 +252,36 @@ a.navbar-item:hover {
 /* Contact */
 
 .contact {
-  background-color: #292727;
+  background-color: #bb2b24;
 }
 
 .contact .input,
 .contact .textarea {
   background-color: rgba(255, 255, 255, 0.08);
-  border-color: #555;
+  border-color: rgba(255, 255, 255, 0.25);
   color: #fff;
 }
 
 .contact .input ~ .icon,
 .contact .textarea ~ .icon {
-  color: #7a7a7a;
+  color: #ccc;
 }
 
 .contact .input:focus ~ .icon,
 .contact .textarea:focus ~ .icon {
-  color: #dbdbdb !important;
+  color: #fff !important;
 }
 
-.contact ::-webkit-input-placeholder {
-  color: #888;
-}
-
-.contact ::-moz-placeholder {
-  color: #888;
-}
-
-.contact ::-ms-placeholder {
-  color: #888;
-}
-
+.contact ::-webkit-input-placeholder,
+.contact ::-moz-placeholder,
+.contact ::-ms-placeholder,
 .contact ::placeholder {
-  color: #888;
+  color: #ccc;
 }
 
 .contact .button {
-  background-color: #c52b1c;
+  background-color: #eaeaea;
+  color: #333;
   padding-left: 2em;
   padding-right: 2em;
 }
