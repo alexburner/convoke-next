@@ -75,9 +75,11 @@ export const Formula: React.SFC = () => {
     <section className="formula section">
       <div className="container">
         <div className="title is-3">{RichText.asText(blade.title)}</div>
-        <div className="content">
-          <RichText render={blade.description || []} />
-        </div>
+        {blade.description && (
+          <div className="content">
+            <RichText render={blade.description} />
+          </div>
+        )}
         <div className="columns">
           {blade.stages.map((stage, i, stages) => (
             <div key={stage.image_url || ""} className="column">
