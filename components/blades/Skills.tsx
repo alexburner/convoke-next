@@ -71,8 +71,6 @@ export const Skills: React.SFC = () => {
     );
   }
 
-  console.log(blade.skill_set[0].description);
-
   return (
     <section className="skills section">
       <div className="container">
