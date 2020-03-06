@@ -125,6 +125,33 @@ a.navbar-item:hover {
   color: #aaa;
 }
 
+.formula .column {
+  position: relative;
+}
+
+.formula .column .divider {
+  position: absolute;
+  top: 50%;
+  right: -1.125rem;
+  width: 10%;
+  height: auto;
+  transform: translateY(-50%);
+}
+
+@media screen and (max-width: 768px) {
+  .formula .column .divider {
+    top: calc(100% - 0.75rem);
+    max-width: 32px;
+    right: 50%;
+    transform: translateX(50%) rotate(90deg);
+  }
+}
+
+.formula figure img {
+  max-width: 320px;
+  margin: auto;
+}
+
 /* Blade - Core Competencies */
 
 .skills {

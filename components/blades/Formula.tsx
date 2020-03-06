@@ -79,8 +79,14 @@ export const Formula: React.SFC = () => {
           <RichText render={blade.description || []} />
         </div>
         <div className="columns">
-          {blade.stages.map(stage => (
+          {blade.stages.map((stage, i, stages) => (
             <div key={stage.image_url || ""} className="column">
+              {i < stages.length - 1 && (
+                <img
+                  className="divider"
+                  src="https://i.imgur.com/YkHuAqc.png"
+                />
+              )}
               <figure className="image">
                 <img src={stage.image_url || ""} alt={stage.alt_text || ""} />
               </figure>
