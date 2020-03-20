@@ -42,11 +42,7 @@ export const Contact: React.SFC = () => (
             </div>
             <div className="field is-grouped">
               <div className="control">
-                <input
-                  className="button is-danger"
-                  type="submit"
-                  value="Send"
-                />
+                <input className="button" type="submit" value="Send" />
               </div>
             </div>
           </form>
