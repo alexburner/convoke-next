@@ -6,11 +6,10 @@ export const Footer: React.SFC = () => (
       <div className="columns is-centered">
         <div className="column is-12">
           <strong>Convoke</strong>
-          &nbsp;
+          &nbsp;&mdash;
           <em>
-            (Your creatures can help cast this spell. Each creature you tap
-            while casting this spell pays for ❶ or one mana of that creature's
-            color.)
+            Your creatures can help cast this spell. Each creature you tap while
+            casting this spell pays for ❶ or one mana of that creature's color.
           </em>
         </div>
       </div>

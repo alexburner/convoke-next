@@ -300,6 +300,10 @@ a.navbar-item:hover {
   padding-bottom: 0;
 }
 
+.footer strong {
+  color: #555;
+}
+
 /* Subpages */
 .subpage {
   background-color: #e6e6e6;
