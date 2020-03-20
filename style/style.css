@@ -125,21 +125,22 @@ a.navbar-item:hover {
   position: relative;
 }
 
-.formula .column .divider {
+.formula .column .arrow {
   position: absolute;
   top: 50%;
-  right: -1.125rem;
+  right: -5%;
+  transform: translateY(-50%);
   width: 10%;
   height: auto;
-  transform: translateY(-50%);
 }
 
 @media screen and (max-width: 768px) {
-  .formula .column .divider {
-    top: calc(100% - 0.75rem);
-    max-width: 32px;
+  .formula .column .arrow {
+    top: unset;
+    bottom: -5%;
     right: 50%;
     transform: translateX(50%) rotate(90deg);
+    max-width: 32px;
   }
 }
 

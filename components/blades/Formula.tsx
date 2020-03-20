@@ -84,10 +84,7 @@ export const Formula: React.SFC = () => {
           {blade.stages.map((stage, i, stages) => (
             <div key={stage.image_url || ""} className="column">
               {i < stages.length - 1 && (
-                <img
-                  className="divider"
-                  src="https://i.imgur.com/YkHuAqc.png"
-                />
+                <img className="arrow" src="https://i.imgur.com/YkHuAqc.png" />
               )}
               <figure className="image">
                 <img src={stage.image_url || ""} alt={stage.alt_text || ""} />
