@@ -309,3 +309,7 @@ a.navbar-item:hover {
   background-color: #e6e6e6;
   color: #333;
 }
+
+.subpage .title {
+  color: #333;
+}

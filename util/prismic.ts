@@ -13,22 +13,14 @@ export const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-export const getSubpage = async (uid: string): Promise<Subpage | undefined> => {
-  const response = await client.query({
-    query: gql`
-      query {
-        subpage(uid:"${uid}", lang:"en-us"){
-          title
-          body
-        }
+export const getSubpageQuery = (uid: string) =>
+  gql`
+    query {
+      subpage(uid:"${uid}", lang:"en-us"){
+        title
+        body
       }
-    `,
-  });
-  const subpage = response?.data?.subpage;
-  if (subpage) {
-    return {
-      title: subpage.title,
-      body: subpage.body,
-    };
-  }
-};
+    }
+  `;
+
+export const extractSubpage = (data: any): Subpage | undefined => data?.subpage;
