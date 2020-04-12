@@ -10,7 +10,7 @@ export interface Subpage {
 
 export const client = new ApolloClient({
   link: PrismicLink({ uri: "https://convoke.prismic.io/graphql" }),
-  cache: new InMemoryCache()
+  cache: new InMemoryCache(),
 });
 
 export const getSubpage = async (uid: string): Promise<Subpage | undefined> => {
@@ -22,13 +22,13 @@ export const getSubpage = async (uid: string): Promise<Subpage | undefined> => {
           body
         }
       }
-    `
+    `,
   });
   const subpage = response?.data?.subpage;
   if (subpage) {
     return {
       title: subpage.title,
-      body: subpage.body
+      body: subpage.body,
     };
   }
 };

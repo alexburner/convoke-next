@@ -11,7 +11,7 @@ export const pageview = (url: string) => {
     return;
   }
   (window as any).gtag("config", GA_TRACKING_ID, {
-    page_path: url
+    page_path: url,
   });
 };
 
@@ -20,7 +20,7 @@ export const event = ({
   action,
   category,
   label,
-  value
+  value,
 }: {
   [key: string]: string;
 }) => {
@@ -31,6 +31,6 @@ export const event = ({
   (window as any).gtag("event", action, {
     event_category: category,
     event_label: label,
-    value: value
+    value: value,
   });
 };

@@ -78,7 +78,7 @@ export const Logos: React.SFC = () => {
           </div>
         )}
         <div className="columns is-mobile is-multiline is-centered">
-          {blade.logos.map(logo => (
+          {blade.logos.map((logo) => (
             <div
               key={logo.image_url || ""}
               className="column is-4-mobile is-3-tablet is-2-widescreen"

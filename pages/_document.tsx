@@ -82,7 +82,7 @@ export default class extends Document {
           <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
           <script
             dangerouslySetInnerHTML={{
-              __html: `WebFont.load({ google: { families: ["Montserrat"] } });`
+              __html: `WebFont.load({ google: { families: ["Montserrat"] } });`,
             }}
           />
 
@@ -98,7 +98,7 @@ export default class extends Document {
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
                 gtag('config', '${GA_TRACKING_ID}');
-            `
+            `,
             }}
           />
 

@@ -16,7 +16,7 @@ import { Contact } from "../components/Contact";
 
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeError", () => NProgress.done());
-Router.events.on("routeChangeComplete", url => {
+Router.events.on("routeChangeComplete", (url) => {
   NProgress.done();
   pageview(url);
 });

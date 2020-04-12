@@ -76,7 +76,7 @@ export const Skills: React.SFC = () => {
       <div className="container">
         <div className="title is-3">{RichText.asText(blade.title)}</div>
         <div className="columns">
-          {blade.skill_set.map(skill => (
+          {blade.skill_set.map((skill) => (
             <div
               key={skill.font_awesome_icon || ""}
               className="column has-text-centered"
