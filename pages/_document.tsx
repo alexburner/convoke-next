@@ -43,41 +43,6 @@ export default class extends Document {
           />
           <link rel="manifest" href="/site.webmanifest" />
 
-          {/* Basic description */}
-          <meta
-            name="description"
-            content="Leveraging a unique approach to strategy, we combine the rigor of a traditional marketing consultancy with deep subject matter expertise in tech and gaming."
-          />
-
-          {/* Open Graph / Facebook */}
-          <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://convoke.gg/" />
-          <meta
-            property="og:title"
-            content="Convoke | Marketing Powered By Nerdiness"
-          />
-          <meta
-            property="og:description"
-            content="Leveraging a unique approach to strategy, we combine the rigor of a traditional marketing consultancy with deep subject matter expertise in tech and gaming."
-          />
-          <meta property="og:image" content="https://i.imgur.com/5GRfmUJ.png" />
-
-          {/* Twitter */}
-          <meta property="twitter:card" content="summary_large_image" />
-          <meta property="twitter:url" content="https://convoke.gg/" />
-          <meta
-            property="twitter:title"
-            content="Convoke | Marketing Powered By Nerdiness"
-          />
-          <meta
-            property="twitter:description"
-            content="Leveraging a unique approach to strategy, we combine the rigor of a traditional marketing consultancy with deep subject matter expertise in tech and gaming."
-          />
-          <meta
-            name="twitter:image"
-            content="https://i.imgur.com/5GRfmUJ.png"
-          />
-
           {/* Google Web Fonts */}
           <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
           <script

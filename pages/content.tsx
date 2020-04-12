@@ -1,11 +1,17 @@
-import { NextPage } from "next";
+import { NextPage, GetStaticProps } from "next";
 import { RichText } from "prismic-reactjs";
 import { useQuery } from "@apollo/react-hooks";
 import { ReactNode } from "react";
 
-import { extractSubpage, getSubpageQuery } from "../util/prismic";
+import {
+  extractSubpage,
+  getSubpageQuery,
+  getMetadata,
+  Metadata,
+} from "../util/prismic";
+import { PageHead } from "../components/PageHead";
 
-const Work: NextPage = () => {
+const Work: NextPage<{ metadata: Metadata }> = ({ metadata }) => {
   const { loading, error, data } = useQuery(getSubpageQuery("content"));
 
   let content: ReactNode = null;
@@ -39,9 +45,16 @@ const Work: NextPage = () => {
 
   return (
     <section className="section subpage">
+      <PageHead metadata={metadata} />
       <div className="container">{content}</div>
     </section>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const metadata = await getMetadata();
+  if (!metadata) throw new Error("Couldn't find metadata");
+  return { props: { metadata } };
 };
 
 export default Work;

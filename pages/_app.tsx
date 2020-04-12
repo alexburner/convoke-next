@@ -1,6 +1,5 @@
 import React from "react";
 import App from "next/app";
-import Head from "next/head";
 import Router from "next/router";
 import NProgress from "nprogress";
 import { ApolloProvider } from "@apollo/react-hooks";
@@ -26,9 +25,6 @@ export default class CustomApp extends App {
     const { Component, pageProps } = this.props;
     return (
       <>
-        <Head>
-          <title>Convoke | Marketing Powered By Nerdiness</title>
-        </Head>
         {/* <Navbar /> */}
         <ApolloProvider client={client}>
           <Component {...pageProps} />
