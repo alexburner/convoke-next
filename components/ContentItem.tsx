@@ -5,6 +5,7 @@ export interface ContentItemData {
   title: unknown;
   link_url: string;
   image_url: string;
+  type: string;
 }
 
 interface Props {
