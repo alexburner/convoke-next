@@ -45,7 +45,7 @@ const Work: NextPage<{ metadata: Metadata }> = ({ metadata }) => {
 
   return (
     <section className="section subpage">
-      <PageHead metadata={metadata} />
+      <PageHead metadata={metadata} name="Work" />
       <div className="container">{content}</div>
     </section>
   );

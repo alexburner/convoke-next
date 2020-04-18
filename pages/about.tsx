@@ -11,7 +11,7 @@ import {
 } from "../util/prismic";
 import { PageHead } from "../components/PageHead";
 
-const Work: NextPage<{ metadata: Metadata }> = ({ metadata }) => {
+const About: NextPage<{ metadata: Metadata }> = ({ metadata }) => {
   const { loading, error, data } = useQuery(getSubpageQuery("about"));
 
   let content: ReactNode = null;
@@ -45,7 +45,7 @@ const Work: NextPage<{ metadata: Metadata }> = ({ metadata }) => {
 
   return (
     <section className="section subpage">
-      <PageHead metadata={metadata} />
+      <PageHead metadata={metadata} name="About" />
       <div className="container">{content}</div>
     </section>
   );
@@ -57,4 +57,4 @@ export const getStaticProps: GetStaticProps = async () => {
   return { props: { metadata } };
 };
 
-export default Work;
+export default About;

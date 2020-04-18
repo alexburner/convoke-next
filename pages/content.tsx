@@ -12,7 +12,7 @@ import {
 import { PageHead } from "../components/PageHead";
 import { AllContentItems } from "../components/AllContentItems";
 
-const Work: NextPage<{ metadata: Metadata }> = ({ metadata }) => {
+const Content: NextPage<{ metadata: Metadata }> = ({ metadata }) => {
   const { loading, error, data } = useQuery(getSubpageQuery("content"));
 
   let content: ReactNode = null;
@@ -46,7 +46,7 @@ const Work: NextPage<{ metadata: Metadata }> = ({ metadata }) => {
 
   return (
     <section className="section subpage">
-      <PageHead metadata={metadata} />
+      <PageHead metadata={metadata} name="Content" />
       <div className="container">
         {content}
         <AllContentItems />
@@ -61,4 +61,4 @@ export const getStaticProps: GetStaticProps = async () => {
   return { props: { metadata } };
 };
 
-export default Work;
+export default Content;
