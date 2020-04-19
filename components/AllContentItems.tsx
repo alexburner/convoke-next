@@ -47,7 +47,7 @@ export const AllContentItems: React.SFC<{}> = () => {
 
   const items = extractItems(data);
   return (
-    <div className="columns is-mobile is-multiline is-centered">
+    <div className="columns is-mobile is-multiline">
       {items?.map((contentItem) => (
         <div
           key={contentItem.link_url}

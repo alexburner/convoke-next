@@ -237,17 +237,8 @@ a.navbar-item:hover {
   background-color: #111010;
 }
 
-.content-x a {
+.content-x a.content-item {
   color: #ccc;
-}
-
-.content-x a:hover {
-  color: rgb(69, 129, 220);
-  text-decoration: underline;
-}
-
-.content-x p {
-  padding: 0 0.1em;
 }
 
 /* Contact */
@@ -312,4 +303,19 @@ a.navbar-item:hover {
 
 .subpage .title {
   color: #333;
+}
+
+/* Content Item */
+
+a.content-item {
+  color: #333;
+}
+
+a.content-item:hover {
+  color: rgb(69, 129, 220);
+  text-decoration: underline;
+}
+
+.content-item p {
+  padding: 0 0.1em;
 }
