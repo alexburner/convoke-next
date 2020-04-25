@@ -97,14 +97,7 @@ a.navbar-item:hover {
 
 .positioning {
   position: relative;
-  background: none;
   background-color: #080808;
-  padding-top: 0;
-}
-
-.positioning .logo {
-  width: 360px;
-  margin: 6em 0 2em;
 }
 
 .positioning p {

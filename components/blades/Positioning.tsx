@@ -84,11 +84,6 @@ export const Positioning: React.SFC = () => {
         ></div>
       )}
       <div className="container">
-        <img
-          className="logo"
-          src="https://i.imgur.com/aXdnZnn.png"
-          alt="convoke"
-        />
         <div className="title is-1 is-spaced">
           {RichText.asText(blade.title)}
         </div>

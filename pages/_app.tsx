@@ -8,7 +8,7 @@ import "../style/style.css";
 import "../style/nprogress.css";
 
 import { pageview } from "../util/gtag";
-// import { Navbar } from "../components/Navbar";
+import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { client } from "../util/prismic";
 import { Contact } from "../components/Contact";
@@ -25,7 +25,7 @@ export default class CustomApp extends App {
     const { Component, pageProps } = this.props;
     return (
       <>
-        {/* <Navbar /> */}
+        <Navbar />
         <ApolloProvider client={client}>
           <Component {...pageProps} />
         </ApolloProvider>

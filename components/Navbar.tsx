@@ -4,11 +4,13 @@ import Link from "next/link";
 export const Navbar: React.SFC = () => {
   const [isActive, setActive] = useState(false);
   return (
-    <nav className="navbar is-fixed-top">
+    <nav className="navbar">
       <div className="container">
         <div className="navbar-brand">
           <Link href="/">
-            <a className="navbar-item">CONVOKE</a>
+            <a className="navbar-item">
+              <img src="https://i.imgur.com/aXdnZnn.png" alt="Convoke" />
+            </a>
           </Link>
           <a
             role="button"
@@ -38,11 +40,11 @@ export const Navbar: React.SFC = () => {
                 About
               </a>
             </Link>
-            <Link href="/work">
+            {/* <Link href="/work">
               <a className="navbar-item" href="/work">
                 Work
               </a>
-            </Link>
+            </Link> */}
             <Link href="/content">
               <a className="navbar-item" href="/content">
                 Content
