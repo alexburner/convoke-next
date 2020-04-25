@@ -6,7 +6,7 @@ import { ContentItemData, ContentItem } from "./ContentItem";
 
 const GET_CONTENT_ITEMS = gql`
   query {
-    allContents {
+    allContents(sortBy: date_DESC) {
       edges {
         node {
           title
@@ -14,6 +14,13 @@ const GET_CONTENT_ITEMS = gql`
           link_url
           date
           type
+          topics {
+            topic {
+              ... on Content_topic {
+                topic_name
+              }
+            }
+          }
         }
       }
     }
@@ -50,7 +57,7 @@ export const AllContentItems: React.SFC<{}> = () => {
     <div className="columns is-mobile is-multiline">
       {items?.map((contentItem) => (
         <div
-          key={contentItem.link_url}
+          key={contentItem.link_url || ""}
           className="column is-half-mobile is-half-tablet is-one-third-desktop is-one-third-widescreen is-one-quarter-fullhd"
         >
           <ContentItem data={contentItem} />

@@ -319,3 +319,7 @@ a.content-item:hover {
 .content-item p {
   padding: 0 0.1em;
 }
+
+.content-item small {
+  opacity: 0.75;
+}
