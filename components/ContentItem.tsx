@@ -33,15 +33,12 @@ export const ContentItem: React.SFC<Props> = ({ data }) => {
   const metadataString = metadata.join(" - ");
 
   return (
-    <a
-      className="content-item"
-      target="_blank"
-      href={data.link_url || ""}
-      title={title}
-    >
-      <img src={data.image_url || ""} />
-      <p className="has-text-weight-semibold">{title}</p>
+    <div className="content-item">
+      <a target="_blank" href={data.link_url || ""} title={title}>
+        <img src={data.image_url || ""} />
+        <p className="has-text-weight-semibold">{title}</p>
+      </a>
       {metadataString && <small className="is-italic">{metadataString}</small>}
-    </a>
+    </div>
   );
 };
