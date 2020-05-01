@@ -49,10 +49,10 @@ body {
 }
 
 .navbar-burger:hover,
-a.navbar-item.is-active,
-a.navbar-item:hover {
+a.navbar-item.is-tab.is-active,
+a.navbar-item.is-tab:hover {
   color: #eee;
-  background-color: #101010;
+  border-bottom-color: #bb2b24;
 }
 
 /* Brand */

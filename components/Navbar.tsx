@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export const Navbar: React.SFC = () => {
   const [isActive, setActive] = useState(false);
@@ -32,28 +33,11 @@ export const Navbar: React.SFC = () => {
           className={"navbar-menu" + (isActive ? " is-active" : "")}
         >
           <div className="navbar-end">
-            <Link href="/">
-              <a className="navbar-item" onClick={makeInactive}>
-                Home
-              </a>
-            </Link>
-            <Link href="/about">
-              <a className="navbar-item" onClick={makeInactive}>
-                About
-              </a>
-            </Link>
-            {/* <Link href="/work">
-              <a className="navbar-item" href="/work">
-                Work
-              </a>
-            </Link> */}
-            <Link href="/content">
-              <a className="navbar-item" onClick={makeInactive}>
-                Content
-              </a>
-            </Link>
+            <NavLink text="Home" href="/" onClick={makeInactive} />
+            <NavLink text="About" href="/about" onClick={makeInactive} />
+            <NavLink text="Content" href="/content" onClick={makeInactive} />
             <a
-              className="navbar-item"
+              className="navbar-item is-tab"
               onClick={() => {
                 makeInactive();
                 scrollToFooter();
@@ -65,6 +49,29 @@ export const Navbar: React.SFC = () => {
         </div>
       </div>
     </nav>
+  );
+};
+
+const NavLink: React.SFC<{
+  href: string;
+  text: string;
+  onClick: () => void;
+}> = (props) => {
+  const router = useRouter();
+  const isActive = router.pathname === props.href;
+  return (
+    <Link href={props.href}>
+      <a
+        className={[
+          "navbar-item",
+          "is-tab",
+          isActive ? "is-active" : undefined,
+        ].join(" ")}
+        onClick={props.onClick}
+      >
+        {props.text}
+      </a>
+    </Link>
   );
 };
 
