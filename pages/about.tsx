@@ -10,6 +10,7 @@ import {
   Metadata,
 } from "../util/prismic";
 import { PageHead } from "../components/PageHead";
+import { Team } from "../components/Team";
 
 const About: NextPage<{ metadata: Metadata }> = ({ metadata }) => {
   const { loading, error, data } = useQuery(getSubpageQuery("about"));
@@ -46,7 +47,10 @@ const About: NextPage<{ metadata: Metadata }> = ({ metadata }) => {
   return (
     <section className="section subpage">
       <PageHead metadata={metadata} name="About" />
-      <div className="container">{content}</div>
+      <div className="container">
+        {content}
+        <Team />
+      </div>
     </section>
   );
 };
