@@ -73,10 +73,13 @@ export const Team: React.SFC<{}> = () => {
         <div className="title is-3">{RichText.asText(team.title)}</div>
       )}
       {team.description && <RichText render={team.description} />}
-      <div className="columns">
+      <div className="columns is-variable is-8">
         {team.team_members?.map((member) => (
           <div key={member.name || ""} className="column">
-            <img src={member.image_url || ""} />
+            <figure className="image">
+              <img className="is-rounded" src={member.image_url || ""} />
+            </figure>
+            <p>&nbsp;</p>
             <p className="has-text-weight-semibold">{member.name}</p>
             <p>{member.role}</p>
           </div>
