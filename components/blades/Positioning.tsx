@@ -84,11 +84,11 @@ export const Positioning: React.SFC = () => {
         ></div>
       )}
       <div className="container">
-        <div className="title is-1 is-spaced">
+        <div className="title is-2 is-spaced">
           {RichText.asText(blade.title)}
         </div>
         {blade.subtitle && (
-          <div className="subtitle is-4">{blade.subtitle}</div>
+          <div className="subtitle is-5">{blade.subtitle}</div>
         )}
         {blade.caption && <p>{blade.caption}</p>}
       </div>
