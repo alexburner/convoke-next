@@ -234,6 +234,10 @@ a.navbar-item.is-tab:hover {
   color: #ccc;
 }
 
+.content-x .view-more {
+  margin-top: 3em;
+}
+
 /* Contact */
 
 .contact {

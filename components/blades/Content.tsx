@@ -2,12 +2,14 @@ import React from "react";
 import { RichText } from "prismic-reactjs";
 import { useQuery } from "@apollo/react-hooks";
 import gql from "graphql-tag";
+import Link from "next/link";
 
 import { ContentItemData, ContentItem } from "../ContentItem";
 
 interface Blade {
   title: unknown;
   content_set: { content: ContentItemData }[];
+  view_more_text: string | null;
 }
 
 const GET_BLADE = gql`
@@ -25,6 +27,7 @@ const GET_BLADE = gql`
               }
             }
           }
+          view_more_text
         }
       }
     }
@@ -84,6 +87,13 @@ export const Content: React.SFC = () => {
             </div>
           ))}
         </div>
+        {blade.view_more_text && (
+          <div className="view-more has-text-right">
+            <Link href="/content">
+              <a className="subtitle is-5">{blade.view_more_text}</a>
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );
