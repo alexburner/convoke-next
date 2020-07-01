@@ -81,7 +81,7 @@ export const Logos: React.SFC = () => {
           {blade.logos.map((logo) => (
             <div
               key={logo.image_url || ""}
-              className="column is-4-mobile is-3-tablet is-2-widescreen"
+              className="column is-4-mobile is-3-tablet"
             >
               <figure className="image">
                 <img src={logo.image_url || ""} />
