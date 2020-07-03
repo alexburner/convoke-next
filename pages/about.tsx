@@ -49,6 +49,7 @@ const About: NextPage<{ metadata: Metadata }> = ({ metadata }) => {
       <PageHead metadata={metadata} name="About" />
       <div className="container">
         {content}
+        <p>&nbsp;</p>
         <Team />
       </div>
     </section>
