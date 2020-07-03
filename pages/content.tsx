@@ -13,6 +13,12 @@ import { PageHead } from "../components/PageHead";
 import { AllContentItems } from "../components/AllContentItems";
 import { Breadcrumbs } from "../components/Breadcrumbs";
 
+export const getStaticProps: GetStaticProps = async () => {
+  const metadata = await getMetadata();
+  if (!metadata) throw new Error("Couldn't find metadata");
+  return { props: { metadata } };
+};
+
 const Content: NextPage<{ metadata: Metadata }> = ({ metadata }) => {
   const { loading, error, data } = useQuery(getSubpageQuery("content"));
 
@@ -60,12 +66,6 @@ const Content: NextPage<{ metadata: Metadata }> = ({ metadata }) => {
       </div>
     </section>
   );
-};
-
-export const getStaticProps: GetStaticProps = async () => {
-  const metadata = await getMetadata();
-  if (!metadata) throw new Error("Couldn't find metadata");
-  return { props: { metadata } };
 };
 
 export default Content;
