@@ -3,24 +3,29 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 export const Navbar: React.SFC = () => {
-  const [isActive, setActive] = useState(false);
-  const toggleActive = () => setActive(!isActive);
-  const makeInactive = () => setActive(false);
+  const [isOpen, setOpen] = useState(false);
+  const toggleOpen = () => {
+    setOpen(!isOpen);
+    if (!isOpen) {
+      // If opening navbar now, prepare to close it on next click
+      document.addEventListener("click", () => setOpen(false), { once: true });
+    }
+  };
   return (
     <nav className="navbar">
       <div className="container">
         <div className="navbar-brand">
           <Link href="/">
-            <a className="navbar-item" onClick={makeInactive}>
+            <a className="navbar-item">
               <img src="https://i.imgur.com/aXdnZnn.png" alt="Convoke" />
             </a>
           </Link>
           <a
             role="button"
-            className={"navbar-burger" + (isActive ? " is-active" : "")}
+            className={"navbar-burger" + (isOpen ? " is-active" : "")}
             aria-label="menu"
             aria-expanded="false"
-            onClick={toggleActive}
+            onClick={toggleOpen}
           >
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -30,19 +35,13 @@ export const Navbar: React.SFC = () => {
 
         <div
           id="navbarId"
-          className={"navbar-menu" + (isActive ? " is-active" : "")}
+          className={"navbar-menu" + (isOpen ? " is-active" : "")}
         >
           <div className="navbar-end">
-            <NavLink text="Home" href="/" onClick={makeInactive} />
-            <NavLink text="About" href="/about" onClick={makeInactive} />
-            <NavLink text="Content" href="/content" onClick={makeInactive} />
-            <a
-              className="navbar-item is-tab"
-              onClick={() => {
-                makeInactive();
-                scrollToFooter();
-              }}
-            >
+            <NavLink text="Home" href="/" />
+            <NavLink text="About" href="/about" />
+            <NavLink text="Content" href="/content" />
+            <a className="navbar-item is-tab" onClick={scrollToFooter}>
               Contact
             </a>
           </div>
@@ -55,7 +54,6 @@ export const Navbar: React.SFC = () => {
 const NavLink: React.SFC<{
   href: string;
   text: string;
-  onClick: () => void;
 }> = (props) => {
   const router = useRouter();
   const isActive = router.pathname === props.href;
@@ -67,7 +65,6 @@ const NavLink: React.SFC<{
           "is-tab",
           isActive ? "is-active" : undefined,
         ].join(" ")}
-        onClick={props.onClick}
       >
         {props.text}
       </a>
