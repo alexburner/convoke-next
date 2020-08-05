@@ -8,6 +8,7 @@ import { Content } from "../components/blades/Content";
 import { Logos } from "../components/blades/Logos";
 import { Metadata, getMetadata } from "../util/prismic";
 import { PageHead } from "../components/PageHead";
+import { Partnership } from "../components/blades/Partnership";
 
 const Index: NextPage<{ metadata: Metadata }> = ({ metadata }) => (
   <>
@@ -16,6 +17,7 @@ const Index: NextPage<{ metadata: Metadata }> = ({ metadata }) => (
     <Formula />
     <Skills />
     <Logos />
+    <Partnership />
     <Work />
     <Content />
   </>
