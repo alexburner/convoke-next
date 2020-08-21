@@ -8,7 +8,6 @@ interface Blade {
   description: unknown;
   stages: {
     image_url: string | null;
-    alt_text: string | null;
   }[];
 }
 
@@ -21,7 +20,6 @@ const GET_BLADE = gql`
           description
           stages {
             image_url
-            alt_text
           }
         }
       }
@@ -87,7 +85,7 @@ export const Formula: React.SFC = () => {
                 <img className="arrow" src="https://i.imgur.com/YkHuAqc.png" />
               )}
               <figure className="image">
-                <img src={stage.image_url || ""} alt={stage.alt_text || ""} />
+                <img src={stage.image_url || ""} />
               </figure>
             </div>
           ))}
