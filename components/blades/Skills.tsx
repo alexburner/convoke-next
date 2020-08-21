@@ -5,6 +5,7 @@ import { RichText } from "prismic-reactjs";
 
 interface Blade {
   title: unknown;
+  description: unknown;
   skill_set: {
     title: unknown;
     description: unknown;
@@ -18,6 +19,7 @@ const GET_BLADE = gql`
       edges {
         node {
           title
+          description
           skill_set {
             title
             description
@@ -75,6 +77,11 @@ export const Skills: React.SFC = () => {
     <section className="skills section">
       <div className="container">
         <div className="title is-3">{RichText.asText(blade.title)}</div>
+        {blade.description && (
+          <div className="content">
+            <RichText render={blade.description} />
+          </div>
+        )}
         <div className="columns">
           {blade.skill_set.map((skill) => (
             <div
