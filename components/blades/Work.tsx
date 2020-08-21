@@ -81,7 +81,7 @@ export const Work: React.SFC = () => {
         <div className="title is-3">{RichText.asText(blade.title)}</div>
         <div className="work-items">
           {blade.works?.map(({ work_item }) => (
-            <WorkItem data={work_item} />
+            <WorkItem key={RichText.asText(work_item.title)} data={work_item} />
           ))}
         </div>
       </div>
