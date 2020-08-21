@@ -7,7 +7,7 @@ import { WorkItemData, WorkItem } from "../WorkItem";
 
 interface Blade {
   title: unknown;
-  work: WorkItemData;
+  works: { work_item: WorkItemData }[];
 }
 
 const GET_BLADE = gql`
@@ -16,12 +16,14 @@ const GET_BLADE = gql`
       edges {
         node {
           title
-          work {
-            ... on Work {
-              title
-              description
-              media {
-                url
+          works {
+            work_item {
+              ... on Work {
+                title
+                description
+                media {
+                  url
+                }
               }
             }
           }
@@ -77,7 +79,11 @@ export const Work: React.SFC = () => {
     <section className="work section">
       <div className="container">
         <div className="title is-3">{RichText.asText(blade.title)}</div>
-        <WorkItem data={blade.work} />
+        <div className="work-items">
+          {blade.works?.map(({ work_item }) => (
+            <WorkItem data={work_item} />
+          ))}
+        </div>
       </div>
     </section>
   );

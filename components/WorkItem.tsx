@@ -27,7 +27,9 @@ const WorkItemSingle: React.SFC<Props> = ({ data }) => (
     </div>
     <div className="column is-full-mobile is-full-tablet is-full-desktop is-one-quarter-widescreen is-one-quarter-fullhd">
       <div className="title is-5">{RichText.asText(data.title)}</div>
-      <RichText render={data.description || []} />
+      <div className="content">
+        <RichText render={data.description || []} />
+      </div>
     </div>
   </div>
 );
@@ -54,7 +56,9 @@ const WorkItemCarousel: React.SFC<Props> = ({ data }) => {
       </div>
       <div className="column is-full-mobile is-full-tablet is-full-desktop is-one-quarter-widescreen is-one-quarter-fullhd">
         <div className="title is-5">{RichText.asText(data.title)}</div>
-        <RichText render={data.description || []} />
+        <div className="content">
+          <RichText render={data.description || []} />
+        </div>
       </div>
     </div>
   );

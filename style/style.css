@@ -197,6 +197,10 @@ a.navbar-item.is-tab:hover {
   color: #333;
 }
 
+.work .work-items > .columns:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
 .work .columns:not(:last-child) {
   margin-bottom: 3em;
 }
